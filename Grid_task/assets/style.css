@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui;
+}
+
+.list-item {
+  list-style: disc;
+  /* display: inline-block; */
+  /* margin: 0px 100px 0px 0px; */
+  font-size: clamp(18px, 4vw, 20px);
+  /* padding: 20px 12px; */
+}
+
+li{
+    margin-bottom: 10px;
+}
+
+p {
+  font-size: clamp(18px, 4vw, 20px);
+  line-height: 1.5;
+  text-align: center;
+}
+
+h1 {
+  font-size: clamp(24px, 5vw, 48px);
+  text-align: center;
+}
+
+.content{
+  display: grid;
+  border: 1px solid black;
+  align-items: center;
+  column-gap: 16px;
+}
+
+
+.grid-container {
+  display: grid;
+  gap: 12px;
+  padding: 40px;
+  background: blanchedalmond;
+  border: 1px solid black;
+  border-radius: 10px;
+  align-content: start;
+  justify-content: stretch;
+  grid-template-columns: 1fr;
+}
+
+.grid-item {
+  display: grid;
+  place-items: center;
+  background: rgb(127, 188, 223);
+  border: 1px solid black;
+  border-radius: 10px;
+  min-height: 40vh;
+}
+
+/* Tablet: allow wrapping with a clear min column size */
+@media (min-width: 640px) {
+  .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  .grid-item:nth-child(1) {
+    grid-column: 1 / -1;
+    display: grid;
+    padding: 100px 80px;           /* inner breathing room */
+    align-items: center;          /* vertical center */
+    justify-content: space-around;        /* horizontal space */
+    column-gap: 50px;             /* gap between pic and text */
+    grid-template-columns: auto 1fr; /* two columns: pic and text */
+  }
+}
+
+
+@media (min-width: 1024px) {
+  .grid-container {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
+  }
+  .grid-item:nth-child(1) {
+    grid-column: 1 / -1;
+  }
+}
+
+.grid-item:nth-child(1) {
+  min-height: 60vh;
+  font-size: clamp(24px, 5vw, 48px);
+}
+
+/* Placeholder for profile picture */
+.circle {
+ display: grid;
+ place-items: center;
+ width: clamp(56px, 60vw, 300px);
+ aspect-ratio: 1 / 1;
+ border-radius: 50%;
+ border: 1px solid black;
+ color: blue;
+}
