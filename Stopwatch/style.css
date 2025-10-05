@@ -1,0 +1,137 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1{
+    text-align: center;
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1b1b1b;
+}
+
+
+
+.outer-circle{
+    width: 250px;
+    height: 250px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.inner-circle{
+    width: 230px;
+    height: 230px;
+    background-color: #1b1b1b;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.laps {
+    list-style: none;
+    width: 250px;
+    height: 250px;
+    color: white;
+    overflow: auto;
+    position: relative;
+    padding: 30px 0;
+}
+
+.laps::-webkit-scrollbar{
+    display: none;
+}
+
+.lap-item{
+    display: inline-block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid wheat;
+    border-radius: 50px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    text-align: center;
+    color: white;
+}
+
+.lap-item .number{
+    font-weight: 600;
+    margin-right: 10px;
+}
+
+.text{
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.minutes, .hours{
+    font-size: 39px;
+}
+
+.seconds{
+    font-size: 39px;
+}
+
+.milliseconds{
+    font-size: 20px;
+}
+
+.button-wrapper{
+    width: 250px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    background-color: #1b1b1b;
+    color: white;
+    cursor: pointer
+}
+
+button:hover{
+    background-color: grey;
+    color:#1b1b1b;
+}
+
+.clear-laps{
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: 1000;
+    width: 130px;
+    border-radius: 50px;
+    border: 1px solid wheat;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    transform: translate(-50%);
+    padding: 10px;
+}
+
+.display{
+    display: none;
+}
