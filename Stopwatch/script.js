@@ -3,6 +3,8 @@ const start = document.getElementById("start");
 const stop = document.getElementById("stop");
 const reset = document.getElementById("reset");
 const lap = document.getElementById("lap");
+const themeToggle = document.getElementById("themeToggle");
+
 
 let hrs = 0;
 let mins = 0;
@@ -81,3 +83,29 @@ reset.onclick = () => {
     lap.setAttribute("disabled", "true");
     stop.setAttribute("style", "display : none");
 }
+
+
+// Theme Toggle Functionality
+themeToggle.onclick = () => {
+    const body = document.body;
+    body.classList.toggle("dark-theme");
+    
+    // Update toggle button icon
+    if (body.classList.contains("dark-theme")) {
+        themeToggle.textContent = "🌙";
+    } else {
+        themeToggle.textContent = "☀️";
+    }
+    
+    // Save theme preference to localStorage
+    localStorage.setItem("theme", body.classList.contains("dark-theme") ? "dark" : "light");
+};
+
+// Load saved theme on page load
+document.addEventListener("DOMContentLoaded", () => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark") {
+        document.body.classList.add("dark-theme");
+        themeToggle.textContent = "☀️";
+    }
+});

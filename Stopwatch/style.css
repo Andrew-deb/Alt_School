@@ -1,5 +1,57 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
 
+/* CSS Variables for Light and Dark Themes */
+:root {
+  --bg-color: #1b1b1b;
+  --container-bg: wheat;
+  --text-color: #1b1b1b;
+  --button-bg: #1b1b1b;
+  --button-text: wheat;
+  --button-hover-bg: darkkhaki;
+  --button-hover-text: #1b1b1b;
+  --button-disabled-bg: grey;
+  --button-disabled-text: #d3d3d3;
+}
+
+/* Dark Theme */
+body.dark-theme {
+  --bg-color: wheat;
+  --container-bg: #2c2c2c;
+  --text-color: wheat;
+  --button-bg: wheat;
+  --button-text: #1b1b1b;
+  --button-hover-bg: #3a3a3a;
+  --button-hover-text: wheat;
+  --button-disabled-bg: #555;
+  --button-disabled-text: #999;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--button-bg);
+  color: var(--button-text);
+  border: 2px solid var(--text-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.theme-toggle:hover {
+  background: var(--button-hover-bg);
+  color: var(--button-hover-text);
+  transform: scale(1.1);
+}
+
 * {
   margin: 0px;
   padding: 0px;
@@ -8,7 +60,7 @@
 }
 
 body {
-  background: #1b1b1b;
+  background: var(--bg-color);
     display: flex;
     height: 100vh;
     align-items: center;
@@ -16,7 +68,7 @@ body {
 }
 
 .container {
-  background: wheat;
+  background: var(--container-bg);
   padding: 30px;
   width: 600px;
   height: 600px;
@@ -26,9 +78,9 @@ body {
 
 #stopwatchDuration {
   font-size: 60px;
-  color: #1b1b1b;
+  color: var(--text-color);
   letter-spacing: 2px;
-  border: 1px solid #1b1b1b;
+  border: 1px solid var(--text-color);
   border-radius: 10px;
 }
 
@@ -45,8 +97,8 @@ body {
   outline: none;
   border-radius: 5px;
   cursor: pointer;
-  background: #1b1b1b;
-  color: wheat;
+  background: var(--button-bg);
+  color: var(--button-text);
   font-weight: 500;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
   height: 30%;
@@ -54,15 +106,15 @@ body {
 }
 
 .lapsButtons button:hover {
-  background: darkkhaki;
-  color: #1b1b1b;
-  border: 1px solid #1b1b1b;
+  background: var(--button-hover-bg);
+  color: var(--button-hover-text);
+  border: 1px solid var(--text-color);
 }
 
 .lapsButtons button:disabled {
-  background: grey;
+  background: var(--button-disabled-bg);
   cursor: not-allowed;
-  color: #d3d3d3;
+  color: var(--button-disabled-text);
   border: none;
 }
 
@@ -75,7 +127,7 @@ body {
 #laps li {
   list-style: none;
   padding: 8px 12px;
-  color: #1b1b1b;
+  color: var(--text-color);
   font-weight: 500;
   font-size: 22px;
   border-radius: 5px;
